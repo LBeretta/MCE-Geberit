@@ -1,1 +1,68 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turni Fiera MCE 2026</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="brand-row">
+        <img src="logo-geberit.jpg" alt="Logo Geberit" class="logo" />
+        <div>
+          <h1>Turni Fiera MCE 2026</h1>
+          <p>Ogni consulente può vedere postazioni e pausa pranzo per giorno e fascia oraria.</p>
+        </div>
+      </div>
+    </header>
 
+    <main class="layout">
+      <aside class="search-panel">
+        <label for="consultantSearch" class="label">Cerca consulente</label>
+        <input id="consultantSearch" type="text" placeholder="Scrivi nome o sigla, es. CAPDA3" />
+
+        <div class="mobile-only">
+          <label for="consultantSelect" class="label">Seleziona consulente</label>
+          <select id="consultantSelect">
+            <option value="">Scegli un consulente</option>
+          </select>
+        </div>
+
+        <details class="desktop-only">
+          <summary id="desktopSummary">Apri elenco consulenti</summary>
+          <div id="consultantList" class="consultant-list"></div>
+        </details>
+      </aside>
+
+      <section class="content-panel">
+        <div id="emptyState" class="empty-state">
+          <h2>Seleziona un consulente</h2>
+          <p>Vedrai qui tutte le postazioni assegnate e la pausa pranzo.</p>
+        </div>
+
+        <div id="consultantView" class="hidden">
+          <div class="sticky-head">
+            <div>
+              <div class="eyebrow">Consulente</div>
+              <h2 id="consultantName"></h2>
+            </div>
+            <div class="turn-count">Turni trovati: <strong id="turnCount"></strong></div>
+          </div>
+
+          <div id="lunchBox" class="lunch-box hidden">
+            <div class="eyebrow blue">Pausa pranzo</div>
+            <div id="lunchContent"></div>
+          </div>
+
+          <div id="scheduleContainer" class="day-list"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="schedule-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
